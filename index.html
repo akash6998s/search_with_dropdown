@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <select style="width: 500px" id="myDropdown"></select>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var data = [
+          { id: 1, text: "Option 1" },
+          { id: 2, text: "Option 2" },
+          { id: 3, text: "Option 3" },
+          { id: 4, text: "Option 4" },
+          // Add more options as needed
+        ];
+
+        var dropdown = $("#myDropdown");
+
+        // Populate dropdown with data
+        for (var i = 0; i < data.length; i++) {
+          var option = new Option(data[i].text, data[i].id, false, false);
+          dropdown.append(option);
+        }
+
+        // Initialize Select2
+        dropdown.select2({
+          placeholder: "Search...",
+          allowClear: true,
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <select style="width: 200px" id="myDropdown"></select>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myDropdown").select2({
+          placeholder: "Search...",
+          allowClear: true, // Optional: Include this if you want to allow clearing the selection
+          // Additional options and configurations can be added here
+        });
+      });
+    </script>
+  </body>
+</html> -->
